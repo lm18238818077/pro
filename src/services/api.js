@@ -1,6 +1,11 @@
 import { stringify } from 'qs';
 import request from '@/utils/request';
 
+export async function queryPlanList(params) {
+  return request(`/plan/index?${stringify(params)}`,{
+  })
+}
+
 export async function queryProjectNotice() {
   return request('/api/project/notice');
 }

@@ -39,6 +39,16 @@ export default [
             name: 'workplace',
             component: './Dashboard/Workplace',
           },
+          {
+            path: '/dashboard/typescript',
+            name: 'typescript',
+            component: './Dashboard/Typescript.tsx',
+          },
+          {
+            path: '/dashboard/hook',
+            name: 'hook',
+            component: './Dashboard/Hook',
+          },
         ],
       },
       // forms

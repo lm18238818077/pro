@@ -64,6 +64,7 @@ const cachedSave = (response, hashcode) => {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, option) {
+  url =  url.includes('/plan') ? '/abb' + url : url
   const options = {
     expirys: isAntdPro(),
     ...option,

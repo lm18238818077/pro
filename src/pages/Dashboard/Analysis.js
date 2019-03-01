@@ -23,15 +23,25 @@ class Analysis extends Component {
     salesType: 'all',
     currentTabKey: '',
     rangePickerValue: getTimeDistance('year'),
+    formValues:{
+      plan_status:'1',
+      time_type:'1',
+      is_own:0
+    }
   };
 
   componentDidMount() {
     const { dispatch } = this.props;
+    const {formValues} = this.state;
     this.reqRef = requestAnimationFrame(() => {
       dispatch({
         type: 'chart/fetch',
       });
     });
+    dispatch({
+      type: 'planlist/fetch',
+      payload: formValues,
+    })
   }
 
   componentWillUnmount() {
